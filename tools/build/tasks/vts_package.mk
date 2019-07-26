@@ -130,8 +130,8 @@ $(foreach m,$(target_hostdriven_modules),\
   ))
 
 host_additional_deps_copy_pairs := \
-  test/vts/tools/vts-tradefed/etc/vts-tradefed_win.bat:$(VTS_TOOLS_OUT)/vts-tradefed_win.bat \
-  test/vts/tools/vts-tradefed/CtsDynamicConfig.xml:$(VTS_TESTCASES_OUT)/cts.dynamic
+  test/vts/tools/vts-tradefed/etc/vts-tradefed_win.bat:$(VTS_TOOLS_OUT)/vts-tradefed_win.bat
+#  test/vts/tools/vts-tradefed/CtsDynamicConfig.xml:$(VTS_TESTCASES_OUT)/cts.dynamic
 
 # Packaging rule for host-side Python logic, configs, and data files
 
@@ -154,14 +154,14 @@ host_testcase_copy_pairs := \
   $(foreach f,$(host_testcase_files),\
     test/vts-testcase/$(f):$(VTS_TESTCASES_OUT)/vts/testcases/$(f))
 
-host_camera_its_files := \
-  $(call find-files-in-subdirs,cts/apps/CameraITS,"*.py" -and -type f,.) \
-  $(call find-files-in-subdirs,cts/apps/CameraITS,"*.pdf" -and -type f,.) \
-  $(call find-files-in-subdirs,cts/apps/CameraITS,"*.png" -and -type f,.)
+#host_camera_its_files := \
+#  $(call find-files-in-subdirs,cts/apps/CameraITS,"*.py" -and -type f,.) \
+#  $(call find-files-in-subdirs,cts/apps/CameraITS,"*.pdf" -and -type f,.) \
+#  $(call find-files-in-subdirs,cts/apps/CameraITS,"*.png" -and -type f,.)
 
-host_camera_its_copy_pairs := \
-  $(foreach f,$(host_camera_its_files),\
-    cts/apps/CameraITS/$(f):$(VTS_TESTCASES_OUT)/CameraITS/$(f))
+#host_camera_its_copy_pairs := \
+#  $(foreach f,$(host_camera_its_files),\
+#    cts/apps/CameraITS/$(f):$(VTS_TESTCASES_OUT)/CameraITS/$(f))
 
 host_systrace_files := \
   $(filter-out .git/%, \
